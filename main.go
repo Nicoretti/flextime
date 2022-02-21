@@ -8,35 +8,21 @@ import (
 
 func currentMonth() string {
 	t := time.Now()
-	switch t.Month() {
-	case 1:
-		return "Jan"
-	case 2:
-		return "Feb"
-	case 3:
-		return "Mar"
-	case 4:
-		return "Apr"
-	case 5:
-		return "May"
-	case 6:
-		return "June"
-	case 7:
-		return "July"
-	case 8:
-		return "Aug"
-	case 9:
-		return "Sept"
-	case 10:
-		return "Oct"
-	case 11:
-		return "Nov"
-	case 12:
-		return "Dez"
-	default:
-		// TODO: consider returning error (error pattern)
-		return "Error"
+	dispatch := map[int]string{
+		1:  "Jan",
+		2:  "Feb",
+		3:  "Mar",
+		4:  "Apr",
+		5:  "May",
+		6:  "June",
+		7:  "July",
+		8:  "Aug",
+		9:  "Sept",
+		10: "Oct",
+		11: "Nov",
+		12: "Dez",
 	}
+	return dispatch[int(t.Month())]
 }
 
 var CLI struct {
