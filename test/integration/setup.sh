@@ -2,7 +2,7 @@
 PROJECT_ROOT=${TESTDIR}/../..
 
 # build flextime binary
-cd "$ROJECT_ROOT" || exit 1
+cd "$PROJECT_ROOT" || exit 1
 go build
 cd "$TESTDIR" || exit 1
 
