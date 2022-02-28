@@ -1,4 +1,4 @@
-  $ source ${TESTDIR}/setup.sh
+  $ . "$TESTDIR"/setup.sh
 
   $ ${FLEXTIME} -h
   Usage: flextime <command>
