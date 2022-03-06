@@ -18,6 +18,7 @@ func main() {
 			"week":  strconv.FormatInt(int64(weekNumber), 10),
 			"month": cli.CurrentMonth(&now),
 		})
-	err := ctx.Run()
+	config := cli.Config{}
+	err := ctx.Run(&config)
 	ctx.FatalIfErrorf(err)
 }

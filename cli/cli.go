@@ -23,10 +23,13 @@ func CurrentMonth(now *time.Time) string {
 	return dispatch[int(now.Month())]
 }
 
+type Config struct {
+}
+
 type MoinCommand struct {
 }
 
-func (cmd *MoinCommand) Run() error {
+func (cmd *MoinCommand) Run(cfg *Config) error {
 	fmt.Println("Executing moin command")
 	return nil
 }
@@ -38,7 +41,7 @@ type AddCmd struct {
 	Tags  string `flag help:"A list of tags for the entry, e.g.: tag1,tag2,...,tagN."`
 }
 
-func (cmd *AddCmd) Run() error {
+func (cmd *AddCmd) Run(cfg *Config) error {
 	fmt.Println("Executing add command")
 	fmt.Println("Note:", cmd.Note)
 	fmt.Println("Break:", cmd.Break)
@@ -51,7 +54,7 @@ type EditCommand struct {
 	// TODO: Add path to editor to be used as argument
 }
 
-func (cmd *EditCommand) Run() error {
+func (cmd *EditCommand) Run(cfg *Config) error {
 	fmt.Println("Executing edit command")
 	return nil
 }
@@ -74,7 +77,7 @@ type ReportCommand struct {
 	} `cmd help: "report for the given time period"`
 }
 
-func (cmd *ReportCommand) Run() error {
+func (cmd *ReportCommand) Run(cfg *Config) error {
 	fmt.Println("Executing report command")
 	return nil
 }
